@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Bilisim.WebUI</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/Bilisim.WebUI.styles.css" asp-append-version="true" />
+
+
+  <style>
+      a{
+          color:white;
+      }
+      .nav-link{
+          color:white;
+      }
+  </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        
+        <!---->
+        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">MENÜ</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Özellikler</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Fiyatlama</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Hakkında</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="ara..." aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">Ara</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!---->
+
+        <div class="main">
+            @RenderBody();
+        </div>
+
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2023 - Tüm Hakları Bilişim Eğitim Merkezine Aittir.
+                <br />
+                <a asp-area="" asp-controller="Home" asp-action="Privacy" style="color:blue">Gizlilik Sözleşmesi</a>
+            </div>
+        </footer>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
